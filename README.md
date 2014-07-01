@@ -18,7 +18,7 @@ Running
     # Run with SPDY support enabled (Fetch 200 URLs at once)
     go hitman.go --urlfile=urls.txt --fetchers=200 --spdyflag=1
     # Run without support enabled (Fetch 200 URLs at once)
-    go hitman.go --urlfile=urls.txt --fetchers=200 --spdyflag=1
+    go hitman.go --urlfile=urls.txt --fetchers=200 --spdyflag=0
 
 Output
 =========
