@@ -52,13 +52,13 @@ func fetcher(urlq chan string, resultq chan result, client *http.Client) {
             // Add HTTP headers here
             // req.Header.Add("User-Agent", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36")
             resp, err := client.Do(req)
-            defer resp.Body.Close()
             if err != nil {
                 log.Fatalf("Encountered error: %s while fetching url: %s.", err, url)
             } else {
                 r.code = resp.StatusCode
             }
             r.endTime = time.Now()
+            resp.Body.Close()
         }
         resultq <- r
     }
